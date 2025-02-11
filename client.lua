@@ -23,7 +23,7 @@ Citizen.CreateThread(function()
 
             if playerStav[playerId] then
                 local coords = GetEntityCoords(playerPed)
-                DrawText3D(coords.x, coords.y, coords.z - 0.4, playerStav[playerId]) -- Umístění textu na břicho
+                DrawText3D(coords.x, coords.y, coords.z - 0.9, playerStav[playerId]) -- Umístění textu na břicho
             end
         end
     end
