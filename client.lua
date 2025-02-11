@@ -39,7 +39,7 @@ function DrawText3D(x, y, z, text)
     scale = scale * fov
 
     if onScreen then
-        SetTextScale(0.0 * scale, 0.35 * scale)
+        SetTextScale(0.0 * scale, 1 * scale)
         SetTextFont(4)
         SetTextProportional(true)
         SetTextColour(255, 255, 255, 215)
