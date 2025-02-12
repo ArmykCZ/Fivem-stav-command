@@ -5,7 +5,7 @@ RegisterCommand("stav", function(source, args, rawCommand)
     local playerId = GetPlayerServerId(PlayerId())
     local text = table.concat(args, " ")
 
-    -- Pokud hráč zadá příkaz bez textu nebo zadá stejný text jako naposledy, tag se odstraní
+    
     if text == "" or playerStav[playerId] == text then
         playerStav[playerId] = nil
     else
@@ -13,7 +13,7 @@ RegisterCommand("stav", function(source, args, rawCommand)
     end
 end, false)
 
--- Hlavní smyčka pro vykreslení textu
+
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
@@ -23,13 +23,13 @@ Citizen.CreateThread(function()
 
             if playerStav[playerId] then
                 local coords = GetEntityCoords(playerPed)
-                DrawText3D(coords.x, coords.y, coords.z - 0.9, playerStav[playerId]) -- Umístění textu na břicho
+                DrawText3D(coords.x, coords.y, coords.z - 0.9, playerStav[playerId])
             end
         end
     end
 end)
 
--- Funkce pro vykreslení 3D textu
+
 function DrawText3D(x, y, z, text)
     local onScreen, _x, _y = World3dToScreen2d(x, y, z)
     local p = GetGameplayCamCoords()
